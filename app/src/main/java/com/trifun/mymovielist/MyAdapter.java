@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,12 +23,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder>{
 
     ArrayList<MoviesList> movielist;
     TaskInterface listener;
-    Switch switch1;
+    Context c;
+
+    boolean isWatched = false;
 
 
     public MyAdapter(ArrayList<MoviesList>movielist, TaskInterface listener){
         this.movielist = movielist;
         this.listener = listener;
+        this.c=c;
     }
 
 
@@ -54,16 +58,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder>{
                 listener.deleteMovie(movie);
             }
         });
-        holder.cbWatched.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
+        holder.cbWatched.setChecked(movie.isWatched());
 
 
-               listener.hideMovie(movie);
-
-
-            }
-        });
 
     }
 
@@ -87,6 +85,27 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder>{
             tvYear = itemView.findViewById(R.id.tvYear);
             cbWatched = itemView.findViewById(R.id.cbWatched);
             ibtnDel = itemView.findViewById(R.id.ibtnDel);
+
+
+
+//            if (cbWatched.isChecked()){
+//                tvMovie.setVisibility(View.VISIBLE);
+//                tvDirector.setVisibility(View.VISIBLE);
+//                tvYear.setVisibility(View.VISIBLE);
+//                cbWatched.setVisibility(View.VISIBLE);
+//                ibtnDel.setVisibility(View.VISIBLE);
+//            }
+//            else{
+//                tvMovie.setVisibility(View.GONE);
+//                tvDirector.setVisibility(View.GONE);
+//                tvYear.setVisibility(View.GONE);
+//                cbWatched.setVisibility(View.GONE);
+//                ibtnDel.setVisibility(View.GONE);
+//            }
+//
+
+
+
         }
     }
 }

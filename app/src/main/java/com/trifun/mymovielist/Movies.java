@@ -23,11 +23,12 @@ public class Movies extends AppCompatActivity implements TaskInterface {
     Button btnAddMovie;
     TextView wlcNote;
     String username;
+    Switch switch1;
 
     EditText etMoviename, etDirector,etYear;
     CheckBox cbWatched;
     MyAdapter adapter;
-    Switch switch1;
+
 
 
     ArrayList<MoviesList> listMovie = new ArrayList<>();
@@ -50,6 +51,7 @@ public class Movies extends AppCompatActivity implements TaskInterface {
         etYear = findViewById(R.id.etYear);
         cbWatched = findViewById(R.id.cbWatched);
         wlcNote =findViewById(R.id.wlcNote);
+        switch1 = findViewById(R.id.switch1);
 
 
 
@@ -57,7 +59,6 @@ public class Movies extends AppCompatActivity implements TaskInterface {
             @Override
             public void onClick(View v) {
 
-                //MoviesList(String movieName,String directorName, int yearRelease)
 
                 String movieName = etMoviename.getText().toString();
                 String directorName = etDirector.getText().toString();
@@ -68,7 +69,32 @@ public class Movies extends AppCompatActivity implements TaskInterface {
 
 
             }
+
         });
+
+        switch1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(cbWatched.isChecked()){
+
+                etDirector.setVisibility(View.VISIBLE);
+                etYear.setVisibility(View.VISIBLE);
+                cbWatched.setVisibility(View.VISIBLE);
+                etMoviename.setVisibility(View.VISIBLE);
+           }
+            else{
+                etMoviename.setVisibility(View.GONE);
+                    etDirector.setVisibility(View.GONE);
+                    etYear.setVisibility(View.GONE);
+               cbWatched.setVisibility(View.GONE);
+
+           }
+
+            }
+        });
+
+
+
 
 
         Intent intent = getIntent();
@@ -87,17 +113,23 @@ public class Movies extends AppCompatActivity implements TaskInterface {
 
 }
 
+    private View switch1() {
+        switch1.setChecked(false);
+        adapter.notifyDataSetChanged();
+        return null;
+    }
+
+
 
     @Override
     public void deleteMovie(MoviesList movie) {
         listMovie.remove(movie);
+
         adapter.notifyDataSetChanged();
     }
 
-    @Override
-    public void hideMovie(MoviesList movie) {
 
-    }
+
 
 
 }

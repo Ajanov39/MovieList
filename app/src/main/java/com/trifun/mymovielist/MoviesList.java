@@ -4,6 +4,8 @@ public class MoviesList {
 
     String movieName, directorName;
     String yearRelease;
+    boolean watched;
+
 
 
     public MoviesList(String movieName,String directorName, String yearRelease) {
@@ -39,7 +41,13 @@ public class MoviesList {
         this.yearRelease = yearRelease;
     }
 
+    public boolean isWatched() {
+        return watched;
+    }
 
+    public void setWatched(boolean watched) {
+        this.watched = watched;
+    }
 }
 
 
