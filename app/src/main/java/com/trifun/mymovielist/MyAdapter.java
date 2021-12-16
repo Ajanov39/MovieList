@@ -61,8 +61,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder>{
 
         holder.cbWatched.setChecked(movie.isWatched());
 
-
-
     }
 
     @Override
@@ -85,26 +83,6 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MovieViewHolder>{
             tvYear = itemView.findViewById(R.id.tvYear);
             cbWatched = itemView.findViewById(R.id.cbWatched);
             ibtnDel = itemView.findViewById(R.id.ibtnDel);
-
-
-
-//            if (cbWatched.isChecked()){
-//                tvMovie.setVisibility(View.VISIBLE);
-//                tvDirector.setVisibility(View.VISIBLE);
-//                tvYear.setVisibility(View.VISIBLE);
-//                cbWatched.setVisibility(View.VISIBLE);
-//                ibtnDel.setVisibility(View.VISIBLE);
-//            }
-//            else{
-//                tvMovie.setVisibility(View.GONE);
-//                tvDirector.setVisibility(View.GONE);
-//                tvYear.setVisibility(View.GONE);
-//                cbWatched.setVisibility(View.GONE);
-//                ibtnDel.setVisibility(View.GONE);
-//            }
-//
-
-
 
         }
     }

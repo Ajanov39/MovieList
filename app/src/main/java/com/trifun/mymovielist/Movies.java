@@ -77,25 +77,22 @@ public class Movies extends AppCompatActivity implements TaskInterface {
             public void onClick(View v) {
                 if(cbWatched.isChecked()){
 
-                etDirector.setVisibility(View.VISIBLE);
-                etYear.setVisibility(View.VISIBLE);
-                cbWatched.setVisibility(View.VISIBLE);
-                etMoviename.setVisibility(View.VISIBLE);
-           }
-            else{
-                etMoviename.setVisibility(View.GONE);
+                    etMoviename.setVisibility(View.GONE);
                     etDirector.setVisibility(View.GONE);
                     etYear.setVisibility(View.GONE);
-               cbWatched.setVisibility(View.GONE);
+                    cbWatched.setVisibility(View.GONE);
+           }
+            else{
+
+                    etDirector.setVisibility(View.VISIBLE);
+                    etYear.setVisibility(View.VISIBLE);
+                    cbWatched.setVisibility(View.VISIBLE);
+                    etMoviename.setVisibility(View.VISIBLE);
 
            }
 
             }
         });
-
-
-
-
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
@@ -107,18 +104,7 @@ public class Movies extends AppCompatActivity implements TaskInterface {
         TaskInterface taskListener = this;
         adapter = new MyAdapter(listMovie,taskListener);
         rvMovies.setAdapter(adapter);
-
-
-
-
-}
-
-    private View switch1() {
-        switch1.setChecked(false);
-        adapter.notifyDataSetChanged();
-        return null;
-    }
-
+        }
 
 
     @Override
