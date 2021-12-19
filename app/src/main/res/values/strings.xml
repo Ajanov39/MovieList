@@ -26,6 +26,11 @@
     <string name="login_failed">"Login failed"</string>
     <string name="user_name">User name</string>
     <string name="login">Log in</string>
+    <string name="edit_movie_list">Edit movie list</string>
+    <string name="year">Year</string>
+    <string name="movie">Movie</string>
+    <string name="director">Director</string>
+    <string name="year">Year</string>
 
 
 </resources>

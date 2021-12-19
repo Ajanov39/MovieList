@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(username.getText().toString().equals("") && password.getText().toString().equals("")){
+                if(username.getText().toString().equals("MockUsername") && password.getText().toString().equals("Test123!")){
 
                     Bundle bundle = new Bundle();
                     Intent intent = new Intent(getApplicationContext(), Movies.class);
