@@ -66,8 +66,8 @@
 
     <LinearLayout
         android:id="@+id/linearLo"
-        android:layout_width="411dp"
-        android:layout_height="294dp"
+        android:layout_width="421dp"
+        android:layout_height="256dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
         android:orientation="vertical"
@@ -114,7 +114,8 @@
         android:text="Show not seen only"
         app:layout_constraintBottom_toTopOf="@+id/linearLo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.062" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
