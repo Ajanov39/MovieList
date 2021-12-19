@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/orange"
+    tools:context=".Movies">
+
+    <TextView
+        android:id="@+id/wlcNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txDescript"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wlcNote" />
+
+    <EditText
+        android:id="@+id/etMovieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Movie"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txDescript" />
+
+    <EditText
+        android:id="@+id/etDirector"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Director"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/etMovieName"
+        app:layout_constraintStart_toStartOf="@+id/etMovieName"
+        app:layout_constraintTop_toBottomOf="@+id/etMovieName" />
+
+    <EditText
+        android:id="@+id/etYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="Year "
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        app:layout_constraintEnd_toEndOf="@+id/etDirector"
+        app:layout_constraintStart_toStartOf="@+id/etDirector"
+        app:layout_constraintTop_toBottomOf="@+id/etDirector" />
+
+    <LinearLayout
+        android:id="@+id/linearLo"
+        android:layout_width="411dp"
+        android:layout_height="294dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvMovies"
+            android:layout_width="match_parent"
+            android:layout_height="267dp"
+            android:padding="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnAddMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Add movie"
+        android:imeOptions="actionDone"
+        app:layout_constraintEnd_toEndOf="@+id/etYear"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/etYear"
+        app:layout_constraintTop_toBottomOf="@+id/etYear" />
+
+<!--    <CheckBox-->
+<!--        android:id="@+id/cbWatched"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Seen"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/etMovieName"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/etMovieName" />-->
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Show not seen only"
+        app:layout_constraintBottom_toTopOf="@+id/linearLo"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
